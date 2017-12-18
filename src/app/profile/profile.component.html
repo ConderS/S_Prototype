@@ -22,10 +22,23 @@
 
         <div id="c">
             <h3>My Accounts</h3>
+
+            <div *ngFor="let account of accounts;" class="bank">
+                <img src="assets/{{account.bank}}.png" alt="">
+                <label>{{account.number}}</label>
+                <button class="btn btn-primary">Manage</button>
+            </div>
+            <button class="btn btn-primary">+ Add</button>
         </div>
 
         <div id="d">
             <h3>Tips</h3>
+
+            <div *ngFor="let tip of tips" class="tips">
+                <label><strong>{{tip.title}}</strong></label>
+                <img src="assets/cancel.png" alt="">
+                <p>{{tip.content}}</p>
+            </div>
         </div>
 
     </div>

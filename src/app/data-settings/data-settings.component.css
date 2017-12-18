@@ -47,3 +47,36 @@
 h3 {
     text-align: center;
 }
+
+#c h3, #d h3 {
+    margin-top: 20px;
+}
+
+/*--Precision---*/
+
+.subtext {
+    text-align: center;
+    margin-top: 16px;
+}
+.pr {
+    float: left;
+    width: 30%;
+    height: 65%;
+    padding-right: 10px;
+    margin-left: 3%;
+    margin-top: 10px;
+    text-align: center;
+}
+.pr label {
+
+}
+.pr_deets p {
+    text-align: left;
+    margin-left: 13px;
+    font-size: 12px;
+}
+
+.pr button {
+    display: inline-block;
+    vertical-align: middle;
+}

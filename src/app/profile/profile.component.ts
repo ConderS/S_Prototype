@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Constants } from './constants';
 
 @Component({
   selector: 'app-profile',
@@ -7,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  private accounts: any = [];
+  private tips: any = [];
+
+  constructor() {
+      const constants = new Constants();
+      this.accounts = constants.accounts;
+      this.tips = constants.tips;
+  }
 
   ngOnInit() {
   }

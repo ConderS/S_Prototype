@@ -59,12 +59,13 @@ h3 {
     height: 10%;
     text-align: justify;
     margin-top: 8%;
-    margin-left: 15%;
+    margin-left: 10%;
+    font-size: 1.3em;
 }
 
 .money_earned p {
     display: inline-block;
-    width: 164px;
+    width: 200px;
     margin: 0;
     float: left;
     margin-left: 20px;
@@ -83,3 +84,40 @@ h3 {
 
 /*--Accounts---*/
 
+.bank {
+    margin-top: 20px;
+}
+.bank img {
+    height: auto;
+    max-width: 100px;
+}
+
+.bank label {
+    margin-left: 23%;
+}
+
+.bank button {
+    margin-left: 15%;
+}
+
+/*---Tips----*/
+.tips {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.tips img {
+    height: auto;
+    max-width: 20px;
+    float: right;
+}
+
+.tips label {
+    font-size: 18px;
+    margin-left: 5%;
+}
+
+.tips p {
+    margin-left: 5%;
+    float: left;
+}

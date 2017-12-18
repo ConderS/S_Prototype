@@ -2,6 +2,27 @@
     <div id="container">
         <div id="a">
             <h3>Precision</h3>
+            <p class="subtext">How much data do you want to sell?</p>
+
+            <div 
+                *ngFor="let level of levels" 
+                [ngStyle]="{'border-right': level.index == 2 ? none : '1px solid gray' }"
+                class="pr"
+                >
+                <label><strong>{{level.title}}</strong></label>
+                <div
+                    *ngFor="let content of level.content" 
+                    class="pr_deets"
+                    >
+                    <p>{{content}}</p>
+                </div>
+                <button 
+                    #selectbtn
+                    class='btn btn-sm {{btnClass[level.index]}}'
+                    (click)="select(level)"
+                    >{{ text[level.index] }}
+                </button>
+            </div>
         </div>
 
         <div id="b">
