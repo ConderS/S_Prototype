@@ -1,0 +1,49 @@
+#a, #b, #c, #d {
+    float: left;
+    /*display: inline-block;*/
+    width: 45%;
+    height: 45%;
+    margin: 0;
+}
+
+#large_container {
+    height: 100%;
+    width: 100%;
+    /*text-align: justify;*/
+}
+
+#container {
+    /*text-align: justify;*/
+    height: 100%;
+    width: 100%;
+    margin: 2% 0 0 5%;
+}
+
+#container::after {
+    /*content: '';*/
+    /*width: 100%;*/  /*Ensures there are at least 2 lines of text, so justification works */
+    /*display: inline-block;*/
+}
+
+#large_container::after {
+/*    content: '';
+    width: 100%;  Ensures there are at least 2 lines of text, so justification works 
+    display: inline-block;*/
+}
+
+#a {
+    border-right: 2px solid gray;
+    border-bottom: 2px solid gray;
+}
+
+#b {
+    border-bottom: 2px solid gray;
+}
+
+#c {
+    border-right: 2px solid gray;
+}
+
+h3 {
+    text-align: center;
+}
