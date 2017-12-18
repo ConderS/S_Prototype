@@ -16,20 +16,40 @@
                     >
                     <p>{{content}}</p>
                 </div>
-                <button 
-                    #selectbtn
-                    class='btn btn-sm {{btnClass[level.index]}}'
-                    (click)="select(level)"
-                    >{{ text[level.index] }}
-                </button>
+                <div class="btn_container">
+                    <button 
+                            #selectbtn
+                            class='btn btn-sm {{btnClass[level.index]}}'
+                            (click)="select(level)"
+                            >{{ text[level.index] }}
+                    </button>
+                </div>
             </div>
         </div>
 
         <div id="b">
             <h3>Clock</h3>
+
+            <div class="clock_group form-group">
+                <select name="" id="" class="clock clock_from form-control" formControlName="time">
+                    <option class="form-control">1</option>
+                </select>
+                <p>to</p>
+                <select name="" id="" class="clock clock_to form-control" formControlName="time">
+                    <option class="form-control">1</option>
+                </select>
+            </div>
+
+            <div class="rule">
+              <label><strong>Rule 1:</strong></label>
+              <p>Switch Sierra Off from 9am to 11am</p>
+            </div>
+            <button class="clock_btn btn btn-primary btn-sm">Add</button>
         </div>
         <div id="c">
             <h3>Whitelist</h3>
+            <p class="subtext">On these websites, we will never read your data</p>
+
         </div>
 
         <div id="d">
