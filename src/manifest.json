@@ -1,0 +1,21 @@
+{
+    "manifest_version": 2,
+    "name": "Sierra",
+    "description": "Data Commercialization",
+    "version": "1.0",
+    "browser_action": {
+        "default_icon": "assets/icon.png",
+        "default_popup": "index.html",
+        "default_title": "Sell your sou- I mean data!"
+    },
+    "permissions": [ "tabs", "activeTab" ],
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+    "web_accessible_resources": [
+        "assets/css/*",
+        "assets/js/*",
+        "assets/fonts/*"
+    ],
+    "chrome_url_overrides": {
+        "newtab": "index.html"
+    }
+}
