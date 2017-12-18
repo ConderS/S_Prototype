@@ -8,6 +8,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { DataSettingsComponent } from './data-settings/data-settings.component';
 import { QaComponent } from './qa/qa.component';
 import { PopupComponent } from './popup/popup.component';
+import { NavComponent } from './home/nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PopupComponent } from './popup/popup.component';
     ProfileComponent,
     DataSettingsComponent,
     QaComponent,
-    PopupComponent
+    PopupComponent,
+    NavComponent
   ],
   imports: [
     Routing,

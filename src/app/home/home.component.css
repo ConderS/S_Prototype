@@ -2,3 +2,15 @@ h1 {
     font-size: 45px;
     margin: 35px 0 0 30px;
 }
+
+div {
+    height: 80%;
+    width: 83%;
+    float: left;
+}
+
+.card {
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.8) 1px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+}

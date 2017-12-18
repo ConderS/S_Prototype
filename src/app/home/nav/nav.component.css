@@ -1,0 +1,17 @@
+div {
+    width: 15%;
+    float: left;
+}
+
+h1 {
+    margin: 40px 0 0 30px;
+}
+
+h1:focus{
+    color: #3498db;
+}
+
+* {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    outline: none !important;
+}
