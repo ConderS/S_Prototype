@@ -1,0 +1,29 @@
+.cancel {
+    height: auto;
+    max-width: 20px;
+    float: right;
+    cursor: pointer;
+}
+
+.bank_info {
+
+}
+
+.bank {
+    margin-top: 20px;
+    height: 60px;
+}
+.bank img {
+    height: auto;
+    max-width: 100px;
+}
+
+.bank label {
+    margin-left: 12%;
+}
+
+.bank button {
+    float: right;
+    margin: 0 auto;
+    margin-right: 5%;
+}

@@ -14,10 +14,10 @@
             </div>
             <div class="money_earned">
                 <p><strong>Current Balance</strong></p>
-                <p id="money"><strong>$17.40</strong></p>
+                <p id="money"><strong>${{currentBalance}}</strong></p>
             </div>
 
-            <button class="btn btn-primary ">Send to Bank</button>
+            <button class="btn btn-primary" (click)="sendToBank()">Send to Bank</button>
         </div>
 
         <div id="c">

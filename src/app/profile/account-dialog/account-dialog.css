@@ -30,6 +30,7 @@ img {
     height: auto;
     max-width: 20px;
     float: right;
+    cursor: pointer;
 }
 
 /*--Form--*/

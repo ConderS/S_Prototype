@@ -1,0 +1,10 @@
+<mat-dialog-content>
+    <img class="cancel" src="assets/cancel.png" (click)="close()">
+    <div class="bank_info">
+        <div *ngFor="let account of accounts;" class="bank">
+            <img src="assets/{{account.type}}.png" alt="">
+            <label>{{account.number}} {{account.short}}</label>
+            <button class="btn btn-primary" (click)="selectedBank()">Select</button>
+        </div>
+    </div>
+</mat-dialog-content>

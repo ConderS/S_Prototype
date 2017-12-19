@@ -11,6 +11,7 @@ export class ProfileComponent implements OnInit {
 
   private accounts: any = [];
   private tips: any = [];
+  private currentBalance: number = 17.43;
 
   constructor(public dialog: MatDialog) {
       const constants = new Constants();
@@ -32,10 +33,68 @@ export class ProfileComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log("Result: ", result);
-      this.accounts[index] = result;
+      if (result == 500) {
+        this.accounts.splice(index, 1);
+
+        for(let i = 0; i < this.accounts.length; i++) {
+          this.accounts[i].index = i;
+        }
+      } else if (result) {
+        this.accounts[index] = result;
+      }
+    });
+  }
+
+  sendToBank() {
+    let dialogRef = this.dialog.open(SendDialog, {
+      width: '500px',
+      data: { accounts: this.accounts }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log("result: ", result);
+
+      if (result) {
+        this.currentBalance = 0;
+      }
     });
   }
 }
+
+@Component({
+  selector: 'send-dialog',
+  templateUrl: './send-dialog/send-dialog.html',
+  styleUrls: ['./send-dialog/send-dialog.css']
+})
+export class SendDialog {
+  private accounts: any = [];
+  private selected: boolean = false;
+
+  constructor(
+    public dialogRef: MatDialogRef<SendDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: any) {
+
+      this.accounts = data.accounts;
+    }
+
+  close(): void {
+    this.dialogRef.close(this.selected);
+  }
+
+  ngOnDestroy() {
+    this.close();
+  }
+
+  selectedBank(): void {
+    this.selected = true;
+    this.close();
+  }
+}
+
+
+
+
+/*--------------------------*/
 
 
 @Component({
@@ -47,6 +106,7 @@ export class AccountDialog {
 
   private account: any;
   private showInfo: boolean = true;
+  private deleteAcc: boolean = false;
 
   constructor(
     public dialogRef: MatDialogRef<AccountDialog>,
@@ -55,27 +115,34 @@ export class AccountDialog {
       this.account = data.account;
     }
 
-  onCloseClick(): void {
-    this.dialogRef.close(this.data.account);
+  close(): void {
+    let data = this.showInfo ? this.data.account : null;
+    data = this.deleteAcc ? 500 : data;
+
+    this.dialogRef.close(data);
   }
 
   switch(): void {
     this.showInfo = !this.showInfo;
   }
 
-  delete(): void {
+  deleteDialog(): void {
+    console.log("HEY");
+    this.deleteAcc = true;
 
+    this.close();
   }
 
   ngOnDestroy() {
-    this.dialogRef.close(this.data.account);
+    this.close();
   }
 
-  save(number, name, bank): void {
-    console.log(number, name, bank);
+  save(_number, name, bank): void {
+    console.log(_number, name, bank);
     this.showInfo = !this.showInfo;
 
     let short = this.nameToShort(name);
+    let number = this.encryptNum(_number);
 
     let account = {
       number: number,
@@ -93,6 +160,13 @@ export class AccountDialog {
   nameToShort(name): string {
     let short = "- " + name.split(' ')[1].toUpperCase();
     return short;
+  }
+
+  encryptNum(number) {
+    if (number.length > 3) {
+      return number.slice(0, -4) + '****';
+    }
+    return number;
   }
 }
 

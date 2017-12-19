@@ -31,4 +31,5 @@ app-root {
     margin: 10px;
     border-radius: 2px;
     box-shadow: rgba(0, 0, 0, 0.8) 1px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+    cursor: pointer;
 }

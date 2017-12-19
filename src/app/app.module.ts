@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { ProfileComponent, AccountDialog } from './profile/profile.component';
+import { ProfileComponent, AccountDialog, SendDialog } from './profile/profile.component';
 import { DataSettingsComponent } from './data-settings/data-settings.component';
 import { QaComponent } from './qa/qa.component';
 import { PopupComponent } from './popup/popup.component';
@@ -21,7 +21,8 @@ import { NavComponent } from './home/nav/nav.component';
     QaComponent,
     PopupComponent,
     NavComponent,
-    AccountDialog
+    AccountDialog,
+    SendDialog
   ],
   imports: [
     Routing,
@@ -30,7 +31,8 @@ import { NavComponent } from './home/nav/nav.component';
     MatDialogModule
   ],
   entryComponents: [
-    AccountDialog
+    AccountDialog,
+    SendDialog
   ],
   providers: [],
   bootstrap: [AppComponent]

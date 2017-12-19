@@ -1,5 +1,5 @@
 <mat-dialog-content>
-    <img src="assets/cancel.png">
+    <img src="assets/cancel.png" (click)="close()">
     <div class="account_info" *ngIf="showInfo">
         <div>
             <label><strong>Card #: </strong></label>
@@ -23,7 +23,7 @@
 
         <div class="buttons" *ngIf="showInfo">
             <button class="btn btn-primary"(click)="switch()">Modify</button>
-            <button class="btn btn-danger" (click)="delete()">Delete</button>
+            <button class="btn btn-danger" (click)="deleteDialog()">Delete</button>
         </div>
     </div>
     <div class="acc_form" *ngIf="!showInfo">
