@@ -24,9 +24,9 @@
             <h3>My Accounts</h3>
 
             <div *ngFor="let account of accounts;" class="bank">
-                <img src="assets/{{account.bank}}.png" alt="">
-                <label>{{account.number}}</label>
-                <button class="btn btn-primary">Manage</button>
+                <img src="assets/{{account.type}}.png" alt="">
+                <label>{{account.number}} {{account.short}}</label>
+                <button class="btn btn-primary" (click)="accountDialog(account.index)">Manage</button>
             </div>
             <button class="btn btn-primary">+ Add</button>
         </div>

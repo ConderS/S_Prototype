@@ -1,0 +1,41 @@
+.account_info {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.account_info div {
+    width: 100%;
+    height: auto;
+    display: block;
+    float: left;
+}
+
+.account_info label {
+    float: left;
+}
+
+.acc {
+    margin-left: 10px;
+}
+
+.buttons {
+    margin-left: 16px;
+}
+.btn {
+    margin-left: 20px;
+}
+
+img {
+    height: auto;
+    max-width: 20px;
+    float: right;
+}
+
+/*--Form--*/
+
+.acc_form {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+}

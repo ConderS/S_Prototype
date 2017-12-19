@@ -1,0 +1,55 @@
+<mat-dialog-content>
+    <img src="assets/cancel.png">
+    <div class="account_info" *ngIf="showInfo">
+        <div>
+            <label><strong>Card #: </strong></label>
+            <label class="acc number">{{account.number}}</label>
+        </div>
+
+        <div>
+            <label><strong>Type: </strong></label>
+            <label class="acc">{{account.type}}</label>
+        </div>
+
+        <div>
+            <label><strong>Name: </strong></label>
+            <label class="acc">{{account.name}}</label>
+        </div>
+
+        <div>
+            <label><strong>Bank: </strong></label>
+            <label class="acc">{{account.bank}}</label>
+        </div>
+
+        <div class="buttons" *ngIf="showInfo">
+            <button class="btn btn-primary"(click)="switch()">Modify</button>
+            <button class="btn btn-danger" (click)="delete()">Delete</button>
+        </div>
+    </div>
+    <div class="acc_form" *ngIf="!showInfo">
+        <div>
+            <label><strong>Card #: </strong></label>
+            <input class="acc number" #number />
+        </div>
+
+        <div>
+            <label><strong>Type: </strong></label>
+            <label class="acc">{{account.type}}</label>
+        </div>
+
+        <div>
+            <label><strong>Name: </strong></label>
+            <input class="acc number" #name />
+        </div>
+
+        <div>
+            <label><strong>Bank: </strong></label>
+            <input class="acc number" #bank />
+        </div>
+
+        <div class="buttons" *ngIf="!showInfo">
+            <button class="btn btn-primary"(click)="save(number.value, name.value, bank.value)">Save</button>
+            <button class="btn btn-secondary" (click)="switch()">Back</button>
+        </div>
+    </div>
+</mat-dialog-content>
