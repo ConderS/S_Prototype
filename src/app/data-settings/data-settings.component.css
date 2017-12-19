@@ -121,3 +121,37 @@ h3 {
     float: left;
     margin-left: 10%;
 }
+
+
+/*---Whitelist---*/
+
+#c p {
+    margin-bottom: 30px;
+}
+.url {
+    height: auto;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.url img {
+    height: auto;
+    max-width: 20px;
+    float: right;
+    margin-top: 5px;
+}
+
+.url label {
+    font-size: 14px;
+}
+.url hr {
+    margin: 0;
+}
+.wlist_btn_container {
+    width: 50%;
+    margin: 0 auto;
+    height: auto;
+}
+.whitelist_btn {
+    margin-left: 0;
+}
