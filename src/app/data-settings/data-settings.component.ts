@@ -9,8 +9,10 @@ import { Constants } from './constants';
 export class DataSettingsComponent implements OnInit {
 
   private levels: any = [];
-  private text: any = ["Select", "Select", "Select"];
-  private btnClass: any = ["btn-primary","btn-primary","btn-primary" ];
+  private text: any = ["Select", "Selected", "Select"];
+  private btnClass: any = ["btn-primary","btn-secondary","btn-primary" ];
+  private revenue: number = 7;
+
   constructor() {
       const constants = new Constants();
       this.levels = constants.levels;
@@ -26,6 +28,21 @@ export class DataSettingsComponent implements OnInit {
       for(var i = 0; i < this.btnClass.length; i++) {
           this.btnClass[i] = i == level.index ? "btn-secondary" : "btn-primary";
       }
+
+      switch(level.title) {
+        case "High": {
+          this.revenue = 10;
+          break;
+        }
+        case "Medium": {
+          this.revenue = 7;
+          break;
+        }
+        case "Low": {
+          this.revenue = 4;
+          break;
+        }
+      }
       return level.isActive = !level.isActive;
-  }
+  } 
 }
