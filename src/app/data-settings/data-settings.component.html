@@ -33,16 +33,17 @@
             <div class="clock_group form-group">
                 <select name="" id="" class="clock clock_from form-control" formControlName="time">
                     <option class="form-control">1</option>
-                </select>
+                </select><label for="">AM</label>
                 <p>to</p>
                 <select name="" id="" class="clock clock_to form-control" formControlName="time">
                     <option class="form-control">1</option>
-                </select>
+                </select><label>PM</label>
             </div>
 
             <div class="rule">
               <label><strong>Rule 1:</strong></label>
-              <p>Switch Sierra Off from 9am to 11am</p>
+              <label class="rule_content">Switch Sierra Off from 9am to 11am</label>
+              <img src="assets/cancel.png" alt="">
             </div>
             <button class="clock_btn btn btn-primary btn-sm">Add</button>
         </div>
@@ -62,6 +63,8 @@
 
         <div id="d">
             <h3>Revenue Estimates</h3>
+
+            <h1>$5/month</h1>
         </div>
     </div>
 </div>
