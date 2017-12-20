@@ -1,0 +1,13 @@
+.info_card {
+    width: 100%;
+}
+.left_info {
+    float: left;
+    width: 40%;
+    margin: 50px;
+}
+.right_info {
+    float: left;
+    width: 40%;
+    margin-top: 50px;
+}
