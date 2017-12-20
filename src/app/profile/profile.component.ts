@@ -68,9 +68,10 @@ export class ProfileComponent implements OnInit {
         this.currentBalance = 0;
 
         setTimeout(() => {
-          this.transfer = false;
-          this.marginTop = "8%";
-        }, 2500);
+            this.transfer = false;
+            this.marginTop = "8%";
+          }, 2500);
+        }
     });
   }
 }
@@ -84,7 +85,7 @@ export class SendDialog {
   private accounts: any = [];
   private selected: boolean = false;
   private bankNumber: number;
-  private data: any = null;
+  private sendData: any = null;
 
   constructor(
     public dialogRef: MatDialogRef<SendDialog>,
@@ -94,7 +95,7 @@ export class SendDialog {
     }
 
   close(): void {
-    this.dialogRef.close(this.data);
+    this.dialogRef.close(this.sendData);
   }
 
   ngOnDestroy() {
@@ -102,7 +103,7 @@ export class SendDialog {
   }
 
   selectedBank(bankNumber, type): void {
-    this.data = {
+    this.sendData = {
       selected: true,
       bankNumber: bankNumber,
       type: type
