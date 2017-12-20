@@ -1,0 +1,9 @@
+button {
+    display: block;
+}
+img {
+    height: auto;
+    max-width: 20px;
+    float: right;
+    cursor: pointer;
+}

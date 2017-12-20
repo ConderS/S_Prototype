@@ -1,0 +1,7 @@
+<mat-dialog-content>
+    <img src="assets/cancel.png" (click)="close()">
+    <mat-form-field>
+        <input matInput #url placeholder="Website url">
+    </mat-form-field>
+    <button class="btn btn-primary" (click)="addUrl(url.value)">Add</button>
+</mat-dialog-content>

@@ -6,6 +6,10 @@
     margin: 0;
 }
 
+img {
+    cursor: pointer;
+}
+
 #large_container {
     height: 100%;
     width: 100%;

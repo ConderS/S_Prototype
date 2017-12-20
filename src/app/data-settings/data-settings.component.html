@@ -31,33 +31,33 @@
             <h3>Clock</h3>
 
             <div class="clock_group form-group">
-                <select name="" id="" class="clock clock_from form-control" formControlName="time">
-                    <option class="form-control">1</option>
+                <select name="" id="" #amTime class="clock clock_from form-control" formControlName="time">
+                    <option class="form-control" *ngFor="let time of times">{{time}}</option>
                 </select><label for="">AM</label>
                 <p>to</p>
-                <select name="" id="" class="clock clock_to form-control" formControlName="time">
-                    <option class="form-control">1</option>
+                <select name="" id="" #pmTime class="clock clock_to form-control" formControlName="time">
+                    <option class="form-control" *ngFor="let time of times">{{time}}</option>
                 </select><label>PM</label>
             </div>
 
-            <div class="rule">
-              <label><strong>Rule 1:</strong></label>
-              <label class="rule_content">Switch Sierra Off from 9am to 11am</label>
-              <img src="assets/cancel.png" alt="">
+            <div class="rule" *ngFor="let timeRule of timeRules; let i = index">
+              <label><strong>Rule {{i+1}}:</strong></label>
+              <label class="rule_content">Switch Sierra Off from {{timeRule[0]}}am to {{timeRule[1]}}am</label>
+              <img src="assets/cancel.png" (click)="popTimeRule(index)">
             </div>
-            <button class="clock_btn btn btn-primary btn-sm">Add</button>
+            <button class="clock_btn btn btn-primary btn-sm" (click)="addRule(amTime.value, pmTime.value)">Add</button>
         </div>
         <div id="c">
             <h3>Whitelist</h3>
             <p class="subtext">On these websites, we will never read your data</p>
 
-            <div class="url">
-                <label>www.facebook.com</label>
-                <img src="assets/cancel.png" alt="">
+            <div class="url" *ngFor="let wlUrl of wlUrls">
+                <label>{{wlUrl}}</label>
+                <img src="assets/cancel.png" (click)="popWLUrl(wlUrl)" alt="">
                 <hr>
             </div>
             <div class="wlist_btn_container">
-                <button class="whitelist_btn btn btn-primary btn-sm">Add</button>
+                <button class="whitelist_btn btn btn-primary btn-sm" (click)="openWLDialog()">Add</button>
             </div>
         </div>
 
