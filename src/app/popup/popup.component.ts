@@ -10,8 +10,8 @@ declare var chrome;
 export class PopupComponent implements OnInit {
 
   on: boolean = true;
-  onMessage: string = "Switch On";
-  switchClass: string = "btn-primary";
+  onMessage: string = "Turn Off";
+  switchClass: string = "btn-danger";
 
   constructor() { }
 
@@ -21,9 +21,9 @@ export class PopupComponent implements OnInit {
   switch(): void {
     console.log("CHROME: ", chrome.browserAction);
     if (this.on) { 
-      chrome.browserAction.setIcon({path: "off.png"}); 
+      chrome.browserAction.setIcon({path: "assets/off.png"}); 
     } else { 
-      chrome.browserAction.setIcon({path: "icon.png"}); 
+      chrome.browserAction.setIcon({path: "assets/icon.png"}); 
     }
 
     this.on = !this.on;

@@ -12,10 +12,10 @@ export class RuntimeListener {
       }
 
       turnOff() {
-        chrome.browserAction.setIcon({path: "off.png"});
+        chrome.browserAction.setIcon({path: "assets/off.png"});
       }
 
       turnOn() {
-        chrome.browserAction.setIcon({path: "icon.png"});
+        chrome.browserAction.setIcon({path: "assets/icon.png"});
       }
 }

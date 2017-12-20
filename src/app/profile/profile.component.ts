@@ -12,6 +12,11 @@ export class ProfileComponent implements OnInit {
   private accounts: any = [];
   private tips: any = [];
   private currentBalance: number = 17.43;
+  private pastBalance: number;
+  private sentTo: string;
+
+  private transfer: boolean = false;
+  private marginTop: string = '8%';
 
   constructor(public dialog: MatDialog) {
       const constants = new Constants();
@@ -55,8 +60,17 @@ export class ProfileComponent implements OnInit {
       console.log("result: ", result);
 
       if (result) {
+        this.sentTo = `${result.type} ${result.bankNumber}`;
+        this.pastBalance = this.currentBalance;
+        this.marginTop = "3%";
+
+        this.transfer = true;
         this.currentBalance = 0;
-      }
+
+        setTimeout(() => {
+          this.transfer = false;
+          this.marginTop = "8%";
+        }, 2500);
     });
   }
 }
@@ -69,6 +83,8 @@ export class ProfileComponent implements OnInit {
 export class SendDialog {
   private accounts: any = [];
   private selected: boolean = false;
+  private bankNumber: number;
+  private data: any = null;
 
   constructor(
     public dialogRef: MatDialogRef<SendDialog>,
@@ -78,15 +94,19 @@ export class SendDialog {
     }
 
   close(): void {
-    this.dialogRef.close(this.selected);
+    this.dialogRef.close(this.data);
   }
 
   ngOnDestroy() {
     this.close();
   }
 
-  selectedBank(): void {
-    this.selected = true;
+  selectedBank(bankNumber, type): void {
+    this.data = {
+      selected: true,
+      bankNumber: bankNumber,
+      type: type
+    }
     this.close();
   }
 }

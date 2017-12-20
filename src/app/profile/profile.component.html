@@ -8,12 +8,14 @@
 
         <div id="b">
             <h3>Balance</h3>
-            
-            <div class="money_earned">
+            <div class="transfer_alert alert alert-success" *ngIf="transfer" role="alert">
+                ${{pastBalance}} was successfully transferred to {{sentTo}}
+            </div> 
+            <div [ngStyle]="{'margin-top': marginTop}" class="money_earned">
                 <p><strong>Money Earned to Date:</strong></p>
                 <p id="money"><strong>$203.5</strong></p>
             </div>
-            <div class="money_earned">
+            <div [ngStyle]="{'margin-top': marginTop}" class="money_earned">
                 <p><strong>Current Balance</strong></p>
                 <p id="money"><strong>${{currentBalance}}</strong></p>
             </div>
